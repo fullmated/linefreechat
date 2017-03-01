@@ -43,6 +43,13 @@ post '/callback' do
         tf = Tempfile.open("content")
         tf.write(response.body)
 
+
+        message = {
+          type: 'text',
+          text: 'ばーか'
+        }
+				# 実際にReply
+				client.reply_message(event['replyToken'], message)
 #				message = {
 #					type: 'image',
 #					originalContentUrl: 'https://iwiz-chie.c.yimg.jp/im_siggdT7InUlmC2sfPZsCMp8Mmw---x320-y320-exp5m-n1/d/iwiz-chie/que-10127110835',
