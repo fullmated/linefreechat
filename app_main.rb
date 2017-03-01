@@ -37,16 +37,17 @@ post '/callback' do
 				p message
 				# 実際にReply
         client.reply_message(event['replyToken'], message)
+
       when Line::Bot::Event::MessageType::Image, Line::Bot::Event::MessageType::Video
         response = client.get_message_content(event.message['id'])
         tf = Tempfile.open("content")
         tf.write(response.body)
 
-				message = {
-					type: 'image',
-					originalContentUrl: 'https://iwiz-chie.c.yimg.jp/im_siggdT7InUlmC2sfPZsCMp8Mmw---x320-y320-exp5m-n1/d/iwiz-chie/que-10127110835',
-					previewContentUrl:	'https://iwiz-chie.c.yimg.jp/im_siggdT7InUlmC2sfPZsCMp8Mmw---x320-y320-exp5m-n1/d/iwiz-chie/que-10127110835'
-				};
+#				message = {
+#					type: 'image',
+#					originalContentUrl: 'https://iwiz-chie.c.yimg.jp/im_siggdT7InUlmC2sfPZsCMp8Mmw---x320-y320-exp5m-n1/d/iwiz-chie/que-10127110835',
+#					previewContentUrl:	'https://iwiz-chie.c.yimg.jp/im_siggdT7InUlmC2sfPZsCMp8Mmw---x320-y320-exp5m-n1/d/iwiz-chie/que-10127110835'
+#				};
       end
     end
   }
