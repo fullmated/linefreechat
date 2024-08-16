@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    line-bot-api (1.0.0)
+    line-bot-api (1.29.0)
     mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
     rack (2.2.9)
